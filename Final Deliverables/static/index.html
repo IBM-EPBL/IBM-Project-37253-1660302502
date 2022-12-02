@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <title>Nutrition Assistant</title>
+    <link rel="icon" href="/static/src/cardiogram.png">
+    <link rel="stylesheet" href="C:\Users\admin\159.122.186.196+32008\static\css\index.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-5 colh heading">
+          <p class="display-3">Nutrition Assistant</p>
+        </div>
+        <div class="col-lg-7 colh">
+          <div>
+            <ul class="lists">
+              <li> <a id="c1" href="#cont_1">Home</a></li>
+              <li onmouseover = "signinOne(this)" onmouseout="unsignin(this)"> <a id="c2" href="#logins">SignIn</a></li>
+              <li onmouseover = "signinTwo(this)" onmouseout="unsignin(this)"> <a id="c3" href="#logins">SignUp</a></li>
+              <li onmouseover = "visible(this)" onmouseout="unsignin(this)"> <a id="c4" href="#abouts">About</a></li>
+            </ul>
+          </div>        
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col-lg info">
+            <p>
+              Nutritional support is the provision of adequate nutrients to maintain a 
+              healthy body weight and avoid malnutrition. The continuous delivery of 
+              high-quality and cost-effective nutritional care to patients has been 
+              shown to be an increasingly difficult task. It is observed that dieticians 
+              are requested to carry out the nutritional assessment, to manually 
+              calculate the nutritional needs and to design the everyday meal plan for 
+              each patient. In most cases, these time-consuming tasks are not completed 
+              due to lack of time or inadequate number of personnel. Development of a web-based
+              tool for calculating nutrition in food, which will help patients and clients maintain
+              their healthier lifestyles. The nutrient content calculation was planned to undertake with
+              commonly consumed traditional as well as junk foods
+            </p>
+        </div>
+        <div class="col-lg info" id="infos">
+          <div class="cont_1 pb-0">
+            <div onclick="ont()" id="l1" class="options">
+              <p><img src="C:\Users\admin\159.122.186.196+32008\static\src\home.png" width="60" height="60" alt=""><p class="list">Home</p>
+            </div>
+            <div id="l2" class="options">
+              <p><img src="C:\Users\admin\159.122.186.196+32008\static\src\login.png" width="60" height="60" alt=""><p class="list">Sign In</p>
+            </div>
+            <div id="l3" class="options">
+              <p><img src="C:\Users\admin\159.122.186.196+32008\static\src\sign-up.png" width="60" height="60" alt=""><p class="list">Sign Up</p>
+            </div>
+            <div id="l4" class="options">
+              <p><img src="C:\Users\admin\159.122.186.196+32008\static\src\info.png" width="60" height="60" alt=""><p class="list">about</p>
+            </div>
+
+          <div id="logins" class="login">
+            <div class="container" id="container">
+              <div class="form-container sign-up-container">
+                <form action="/register" method="post" enctype="multipart/form-data">
+                <h1>Create Account</h1>
+                
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="pass" placeholder="Password" required />
+                <button>Sign Up</button>
+                </form>
+              </div>
+              <div class="form-container sign-in-container">
+                <form action="/home" method="post" enctype="multipart/form-data">
+                <h1>Sign in</h1>
+                  <input STYLE="display:none" type="text" name="name" placeholder="Name"/>
+                  <input type="email" name="email" placeholder="Email" required />
+                  <input type="password" name="pass" placeholder="Password" required />
+                  <a href="/forgot">Forgot your password?</a>
+                <button>Sign In</button>
+                </form>
+              </div>
+              <div class="overlay-container">
+                <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                  <h1>Welcome Back!</h1>
+                  <p>To keep connected with us please login with your personal info</p>
+                  <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                  <h1>Hello, Friend!</h1>
+                  <p>Enter your personal details and start journey with us</p>
+                  <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+                </div>
+              </div>
+              </div>
+          </div>
+          <div class="about" id="abouts">
+            <p>
+              Nutrition Assistant is a web-based tool that is capable of calculating nutrition
+              from an image. It uses a food model to detect food items from images and a nutrition
+              API to calculate nutrition information.
+            </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+<script src="C:\Users\admin\159.122.186.196+32008\static\js\index.js">
+
+  function ont() {
+    document.getElementById('info').style.color = 'red';
+  }
+</script>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "4a603e76-8f59-4fcd-b826-8bf529498ba4", // The ID of this integration.
+    region: "jp-tok", // The region your integration is hosted in.
+    serviceInstanceID: "969aa05a-ff29-4d90-9012-ed8e7c6b1ccf", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</html>
